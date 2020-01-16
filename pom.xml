@@ -9,6 +9,12 @@
 	<packaging>pom</packaging>
 	
 	<name>Parent POM for Continuous Integration with Java 8</name>
+	
+	<!-- Git Connection -->
+	<scm>
+        <connection>scm:git:https://github.com/daveajlee/ci-parent-pom</connection>
+        <url>https://github.com/daveajlee/ci-parent-pom</url>
+    </scm>
     
     <!-- Define variables to enable quick changes including java version -->
     <properties>
