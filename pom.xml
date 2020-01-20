@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-    <!-- This Parent POM combines Continuous Integration and Java 8 -->
+    <!-- This Parent POM combines Continuous Integration and Java -->
 	<groupId>de.davelee</groupId>
 	<artifactId>ci-parent-pom</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>2.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
-	<name>Parent POM for Continuous Integration with Java 8</name>
+	<name>Parent POM for Continuous Integration with Java</name>
 	
 	<!-- Git Connection -->
 	<scm>
@@ -28,25 +28,25 @@
     <!-- Define variables to enable quick changes including java version -->
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-        <junit.version>4.12</junit.version>
-        <slf4j.version>1.7.22</slf4j.version>
-		<log4j.version>2.7</log4j.version>
-        <maven.compiler.version>3.1</maven.compiler.version>
+		<java.version>13</java.version>
+        <junit.version>5.5.2</junit.version>
+        <slf4j.version>1.7.30</slf4j.version>
+		<log4j.version>2.13.0</log4j.version>
+        <maven.compiler.version>3.8.1</maven.compiler.version>
         <cobertura.version>2.7</cobertura.version>
-        <surefire.version>2.17</surefire.version>
-        <pmd.version>3.6</pmd.version>
-        <findbugs.version>3.0.4</findbugs.version>
-        <checkstyle.version>2.17</checkstyle.version>
+        <surefire.version>2.22.2</surefire.version>
+        <pmd.version>3.12.0</pmd.version>
+        <findbugs.version>3.0.5</findbugs.version>
+        <checkstyle.version>3.1.0</checkstyle.version>
     </properties>
 
 	<dependencies>
 		<!-- Include the junit plugin since projects must have tests! -->
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
+    		<groupId>org.junit.jupiter</groupId>
+    		<artifactId>junit-jupiter-engine</artifactId>
+    		<version>${junit.version}</version>
+    		<scope>test</scope>
 		</dependency>
         
         <!-- Include Log4j2 as standard logging dependency using SLF4J -->
@@ -102,23 +102,22 @@
 						<artifactId>maven-surefire-plugin</artifactId>
 						<version>${surefire.version}</version>
 					</plugin>
-                    <!-- Measure Code Coverage with Cobertura -->
+                    <!-- Measure Code Coverage with JaCoCo -->
 					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>cobertura-maven-plugin</artifactId>
-						<version>${cobertura.version}</version>
-						<configuration>
-							<formats>
-								<format>html</format>
-								<format>xml</format>
-							</formats>
-						</configuration>
+						<groupId>org.jacoco</groupId>
+						<artifactId>jacoco-maven-plugin</artifactId>
+						<version>0.8.5</version>
 						<executions>
 							<execution>
-								<id>install</id>
-								<phase>install</phase>
 								<goals>
-									<goal>cobertura</goal>
+									<goal>prepare-agent</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>report</id>
+								<phase>test</phase>
+								<goals>
+									<goal>report</goal>
 								</goals>
 							</execution>
 						</executions>
