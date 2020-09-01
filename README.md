@@ -1,4 +1,7 @@
 # ci-parent-pom
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8b0f84cbc6344bff91a250c6afc0e55a)](https://app.codacy.com/manual/dave_33/ci-parent-pom?utm_source=github.com&utm_medium=referral&utm_content=daveajlee/ci-parent-pom&utm_campaign=Badge_Grade_Dashboard)
+
 This is a Maven Parent POM for Continuous Integration using Java. It has an analysis profile that can be called which runs Surefire for JUnit Tests, measures Code Coverage using JaCoCo (v2.0.x and higher) or Cobertura (v1.0.x), generates Documentation using JavaDoc and measures Code Quality using PMD, FindBugs and Checkstyle.
 
 ## Version 2.0.1 with Java 13
