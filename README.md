@@ -11,7 +11,7 @@ This POM can be used as a Parent POM for any Maven Project wishing to use Java 1
 <parent>
 	<groupId>de.davelee</groupId>
 	<artifactId>ci-parent-pom</artifactId>
-	<version>2.0.1</version>
+	<version>2.0.2</version>
 </parent>
 ```
 
