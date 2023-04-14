@@ -1,0 +1,11 @@
+# Intellij files
+/.idea
+
+#Target files
+/target
+
+#Jar files
+*.jar
+
+#Pom ASC files
+*.xml.asc
