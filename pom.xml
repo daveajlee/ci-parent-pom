@@ -4,7 +4,7 @@
     <!-- This Parent POM combines Continuous Integration and Java -->
 	<groupId>de.davelee</groupId>
 	<artifactId>ci-parent-pom</artifactId>
-	<version>2.0.3-SNAPSHOT</version>
+	<version>3.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
 	<name>Parent POM for Continuous Integration with Java</name>
@@ -45,16 +45,16 @@
     <!-- Define variables to enable quick changes including java version -->
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>13</java.version>
-        <junit.version>5.5.2</junit.version>
-        <slf4j.version>1.7.30</slf4j.version>
-		<log4j.version>2.17.1</log4j.version>
-        <maven.compiler.version>3.8.1</maven.compiler.version>
-        <jacoco.version>0.8.5</jacoco.version>
-        <surefire.version>2.22.2</surefire.version>
-        <pmd.version>3.12.0</pmd.version>
+		<java.version>17</java.version>
+        <junit.version>5.9.2</junit.version>
+        <slf4j.version>2.0.7</slf4j.version>
+		<log4j.version>2.20.0</log4j.version>
+        <maven.compiler.version>3.11.0</maven.compiler.version>
+        <jacoco.version>0.8.9</jacoco.version>
+        <surefire.version>3.0.0</surefire.version>
+        <pmd.version>3.20.0</pmd.version>
         <findbugs.version>3.0.5</findbugs.version>
-        <checkstyle.version>3.1.0</checkstyle.version>
+        <checkstyle.version>3.2.1</checkstyle.version>
     </properties>
 
 	<dependencies>
@@ -87,6 +87,26 @@
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j-impl</artifactId>
 			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>${jacoco.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-pmd-plugin</artifactId>
+			<version>${pmd.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>findbugs-maven-plugin</artifactId>
+			<version>${findbugs.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-checkstyle-plugin</artifactId>
+			<version>${checkstyle.version}</version>
 		</dependency>
 	</dependencies>
 
