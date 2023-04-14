@@ -9,3 +9,6 @@
 
 #Pom ASC files
 *.xml.asc
+
+# Mac OS X files
+.DS_Store
