@@ -4,7 +4,7 @@
     <!-- This Parent POM combines Continuous Integration and Java -->
 	<groupId>de.davelee</groupId>
 	<artifactId>ci-parent-pom</artifactId>
-	<version>3.0.1</version>
+	<version>3.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
 	<name>Parent POM for Continuous Integration with Java</name>
@@ -30,7 +30,7 @@
 	<scm>
         <connection>scm:git:https://github.com/daveajlee/ci-parent-pom</connection>
         <url>https://github.com/daveajlee/ci-parent-pom</url>
-      <tag>v3.0.1</tag>
+      <tag>HEAD</tag>
   	</scm>
   	
   	<!-- GitHub Packages -->
